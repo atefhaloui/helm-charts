@@ -20,7 +20,7 @@ spec:
     - 'secret'
     - 'downwardAPI'
     - 'persistentVolumeClaim'
-  hostNetwork: false
+  hostNetwork: {{ .Values.alertmanager.podSecurityPolicy.hostNetwork }}
   hostIPC: false
   hostPID: false
   runAsUser:

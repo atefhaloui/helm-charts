@@ -160,6 +160,11 @@ alertmanager:
     minAvailable: 1
     maxUnavailable: ""
 
+  ## Configure additional options for default pod security policy for Alertmanager
+  ## ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
+  podSecurityPolicy:
+    hostNetwork: false
+
   ## Alertmanager configuration directives
   ## ref: https://prometheus.io/docs/alerting/configuration/#configuration-file
   ##      https://prometheus.io/webtools/alerting/routing-tree-editor/
@@ -2083,6 +2088,7 @@ prometheus:
     allowedCapabilities: []
     allowedHostPaths: []
     volumes: []
+    hostNetwork: false
 
   serviceMonitor:
     ## Scrape interval. If not set, the Prometheus default scrape interval is used.

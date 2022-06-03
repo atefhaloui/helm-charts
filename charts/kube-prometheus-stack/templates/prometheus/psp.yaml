@@ -23,7 +23,7 @@ spec:
 {{- if .Values.prometheus.podSecurityPolicy.volumes }}
 {{ toYaml .Values.prometheus.podSecurityPolicy.volumes | indent 4 }}
 {{- end }}
-  hostNetwork: false
+  hostNetwork: {{ .Values.prometheus.podSecurityPolicy.hostNetwork }}
   hostIPC: false
   hostPID: false
   runAsUser:
